@@ -242,7 +242,20 @@ class Pixee < Formula
     sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
   end
 
+  resource "codemodder-java-codemods" do
+    url "https://github.com/pixee/codemodder-java/releases/download/0.69.1/codemodder-java-codemods-0.69.1.zip"
+    sha256 "d97274a465de3dff284a4ff36c1aeffeeb5fad903a04434c8c43fc24a6252555"
+  end
+
   def install
+    
+    resource("codemodder-java-codemods").stage do
+      mkdir "java-codemodder"
+      cp_r ".", prefix/"java-codemodder"
+    end
+
+    bin.install_symlink prefix/"java-codemodder/bin/core-codemods" => "pixee-java-codemodder"
+
     venv = virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11")
     venv.pip_install resources.reject { |r| r.name == "semgrep" }
     venv.pip_install_and_link buildpath
