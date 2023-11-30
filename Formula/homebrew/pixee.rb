@@ -257,7 +257,8 @@ class Pixee < Formula
     bin.install_symlink prefix/"java-codemodder/bin/core-codemods" => "pixee-java-codemodder"
 
     venv = virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11")
-    venv.pip_install resources.reject { |r| r.name == "semgrep" }
+    skipped = %w[semgrep codemodder-java-codemods]
+    venv.pip_install resources.reject { |r| skipped.include? r.name }
     venv.pip_install_and_link buildpath
 
     bin.install_symlink libexec/"bin/codemodder" => "pixee-python-codemodder"
