@@ -13,6 +13,7 @@ class Pixee < Formula
   depends_on "openjdk@17"
   depends_on "rust" => :build
 
+  depends_on "python-click"
   depends_on "python-prompt-toolkit"
   depends_on "python-rich"
 
