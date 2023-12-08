@@ -10,7 +10,6 @@ class Pixee < Formula
   version "0.1.0"
 
   depends_on "python@3.11"
-  depends_on "openjdk@17"
   depends_on "rust" => :build
 
   depends_on "python-click"
