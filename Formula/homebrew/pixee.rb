@@ -16,11 +16,8 @@ class Pixee < Formula
   depends_on "python-click"
   depends_on "python-prompt-toolkit"
   depends_on "python-rich"
-
-  resource "codemodder" do
-    url "https://files.pythonhosted.org/packages/18/ae/ce5f2d1d6f632f728e173be52212fe29d601a3a3146c35cb725217d7190f/codemodder-0.64.5.tar.gz"
-    sha256 "752f0fc447b26bd1b913ed6df508bc8b7b21ec1159086c0107eecc48e9b1c55e"
-  end
+  depends_on "pixee-python-codemods"
+  depends_on "pixee-java-codemods"
 
   resource "astroid" do
     url "https://files.pythonhosted.org/packages/69/53/07229db171855e410bf40a996f1d49cc35222e18a1c95cd566e69bb9e0e5/astroid-3.0.1.tar.gz"
@@ -47,6 +44,11 @@ class Pixee < Formula
     sha256 "9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1"
   end
 
+  resource "chardet" do
+    url "https://files.pythonhosted.org/packages/f3/0d/f7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079/chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
+  end
+
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/63/09/c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8/charset-normalizer-3.3.2.tar.gz"
     sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
@@ -60,6 +62,11 @@ class Pixee < Formula
   resource "click-option-group" do
     url "https://files.pythonhosted.org/packages/e7/b8/91054601a2e05fd9060cb1baf56be5b24145817b059e078669e1099529c7/click-option-group-0.5.6.tar.gz"
     sha256 "97d06703873518cc5038509443742b25069a3c7562d1ea72ff08bfadde1ce777"
+  end
+
+  resource "codemodder" do
+    url "https://files.pythonhosted.org/packages/dd/6f/2e1b5d64e63490d47557182cb46a585f93cae611fa7d3951097ecbf1585a/codemodder-0.65.0.tar.gz"
+    sha256 "4be42be35a5bb5cbbc45e7d5d34b9c05164788ef3c9274edd0e6143915563beb"
   end
 
   resource "colorama" do
@@ -103,8 +110,8 @@ class Pixee < Formula
   end
 
   resource "jsonschema-specifications" do
-    url "https://files.pythonhosted.org/packages/d4/84/8f5072792a260016048d3a5ae5186ec3be9e090480ddf5446484394dd8c3/jsonschema_specifications-2023.11.1.tar.gz"
-    sha256 "c9b234904ffe02f079bf91b14d79987faa685fd4b39c377a0996954c0090b9ca"
+    url "https://files.pythonhosted.org/packages/8c/ce/1eb873a0ba153cf327464c752412b42d11b9c889d208beca7ef75540d128/jsonschema_specifications-2023.11.2.tar.gz"
+    sha256 "9472fc4fea474cd74bea4a2b190daeccb5a9e4db2ea80efcf7a1b582fc9a81b8"
   end
 
   resource "libcst" do
@@ -143,8 +150,13 @@ class Pixee < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/31/28/e40d24d2e2eb23135f8533ad33d582359c7825623b1e022f9d460def7c05/platformdirs-4.0.0.tar.gz"
-    sha256 "cb633b2bcf10c51af60beb0ab06d2f1d69064b43abf4c185ca6b28865f3f9731"
+    url "https://files.pythonhosted.org/packages/62/d1/7feaaacb1a3faeba96c06e6c5091f90695cc0f94b7e8e1a3a3fe2b33ff9a/platformdirs-4.1.0.tar.gz"
+    sha256 "906d548203468492d432bcb294d4bc2fff751bf84971fbb2c10918cc206ee420"
+  end
+
+  resource "prompt-toolkit" do
+    url "https://files.pythonhosted.org/packages/d9/7b/7d88d94427e1e179e0a62818e68335cf969af5ca38033c0ca02237ab6ee7/prompt_toolkit-3.0.41.tar.gz"
+    sha256 "941367d97fc815548822aa26c2a269fdc4eb21e9ec05fc5d447cf09bad5d75f0"
   end
 
   resource "pygments" do
@@ -168,8 +180,8 @@ class Pixee < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/61/11/5e947c3f2a73e7fb77fd1c3370aa04e107f3c10ceef4880c2e25ef19679c/referencing-0.31.0.tar.gz"
-    sha256 "cc28f2c88fbe7b961a7817a0abc034c09a1e36358f82fedb4ffdf29a25398863"
+    url "https://files.pythonhosted.org/packages/96/71/0aabc36753b7f4ad18cbc3c97dea9d6a4f204cbba7b8e9804313366e1c8f/referencing-0.32.0.tar.gz"
+    sha256 "689e64fe121843dcfd57b71933318ef1f91188ffb45367332700a86ac8fd6161"
   end
 
   resource "requests" do
@@ -183,8 +195,8 @@ class Pixee < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/94/3f/b58db0c212ba3a89378d1684f871e0e7783fc34fadc7696e5439c8c9338e/rpds_py-0.13.1.tar.gz"
-    sha256 "264f3a5906c62b9df3a00ad35f6da1987d321a053895bd85f9d5c708de5c0fbf"
+    url "https://files.pythonhosted.org/packages/48/0b/f42f99419c5150c2741fe28bf97674d928d46ee17f46f2bc5be031cce0bc/rpds_py-0.13.2.tar.gz"
+    sha256 "f8eae66a1304de7368932b42d801c67969fd090ddb1a7a24f27b435ed4bed68f"
   end
 
   resource "ruamel-yaml" do
@@ -198,8 +210,8 @@ class Pixee < Formula
   end
 
   resource "semgrep" do
-    url "https://files.pythonhosted.org/packages/4a/9e/1fccf7092e34beba7790571a5088111288a17fddbf4442b2d84df63b4c33/semgrep-1.50.0.tar.gz"
-    sha256 "c25f401acd686a62c5b437b1804f4e561cd03e22e1111ec126fb2e08ec872bce"
+    url "https://files.pythonhosted.org/packages/e2/2d/df592740723d98ba0d4826d57449a862570964d35a6c7ae4d893a5b5124c/semgrep-1.51.0.tar.gz"
+    sha256 "aa911c9609c8599bea74b329ad44bbc560f33525f6e8144a15383079cb770aa2"
   end
 
   resource "toml" do
@@ -237,31 +249,23 @@ class Pixee < Formula
     sha256 "86c17572d0f75cbf3bcb1a18f3bf2f9e72b39a9c08c9b4a74e991e1882a8efb3"
   end
 
+  resource "wcwidth" do
+    url "https://files.pythonhosted.org/packages/d7/12/63deef355537f290d5282a67bb7bdd165266e4eca93cd556707a325e5a24/wcwidth-0.2.12.tar.gz"
+    sha256 "f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02"
+  end
+
   resource "wrapt" do
     url "https://files.pythonhosted.org/packages/95/4c/063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0a/wrapt-1.16.0.tar.gz"
     sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
   end
 
-  resource "codemodder-java-codemods" do
-    url "https://github.com/pixee/codemodder-java/releases/download/0.69.1/codemodder-java-codemods-0.69.1.zip"
-    sha256 "d97274a465de3dff284a4ff36c1aeffeeb5fad903a04434c8c43fc24a6252555"
-  end
-
   def install
     
-    resource("codemodder-java-codemods").stage do
-      mkdir "java-codemodder"
-      cp_r ".", prefix/"java-codemodder"
-    end
-
-    bin.install_symlink prefix/"java-codemodder/bin/core-codemods" => "pixee-java-codemodder"
-
     venv = virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11")
     skipped = %w[semgrep codemodder-java-codemods]
     venv.pip_install resources.reject { |r| skipped.include? r.name }
     venv.pip_install_and_link buildpath
 
-    bin.install_symlink libexec/"bin/codemodder" => "pixee-python-codemodder"
   end
 
 end
