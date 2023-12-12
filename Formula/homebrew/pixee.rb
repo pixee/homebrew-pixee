@@ -5,7 +5,7 @@ class Pixee < Formula
   homepage "https://pixee.ai"
   url "https://github.com/pixee/pixee-cli.git",
     tag: "0.2.0"
-  head "https://github.com/pixee/pixee-cli.git", tag: "0.2.0"
+  head "https://github.com/pixee/pixee-cli.git", tag: "0.2.1"
   license "MIT"
 
   depends_on "python@3.11"
@@ -13,7 +13,6 @@ class Pixee < Formula
   depends_on "pixee-java-codemods"
 
   def install
-    
     venv = virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11", without_pip: false)
     system libexec/"bin/pip", "install", "-v", buildpath
     #skipped = %w[semgrep codemodder-java-codemods]
@@ -21,5 +20,4 @@ class Pixee < Formula
     #venv.pip_install_and_link buildpath
     bin.install_symlink libexec/"bin/pixee" => "pixee"
   end
-
 end
