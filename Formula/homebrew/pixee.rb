@@ -1,11 +1,12 @@
 class Pixee < Formula
   include Language::Python::Virtualenv
 
+  cli_tag = "0.3.0"
+
   desc "Fix and prevent bugs and security vulnerabilities in your code"
   homepage "https://pixee.ai"
-  url "https://github.com/pixee/pixee-cli.git",
-    tag: "0.2.1"
-  head "https://github.com/pixee/pixee-cli.git", tag: "0.2.1"
+  url "https://github.com/pixee/pixee-cli.git", tag: cli_tag
+  head "https://github.com/pixee/pixee-cli.git", tag: cli_tag
   license "MIT"
 
   depends_on "python@3.11"
