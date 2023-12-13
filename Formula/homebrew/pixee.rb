@@ -1,7 +1,7 @@
 class Pixee < Formula
   include Language::Python::Virtualenv
 
-  cli_tag = "0.3.0"
+  cli_tag = "0.4.0"
 
   desc "Fix and prevent bugs and security vulnerabilities in your code"
   homepage "https://pixee.ai"
