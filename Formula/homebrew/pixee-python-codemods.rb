@@ -9,11 +9,7 @@ class PixeePythonCodemods < Formula
 
     def install
       venv = virtualenv_create(libexec, Formula["python@3.11"].bin/"python3.11", without_pip: false)
-      system libexec/"bin/pip", "install", "-v", buildpath
-
-      #skipped = %w[semgrep codemodder-java-codemods]
-      #venv.pip_install resources.reject { |r| skipped.include? r.name }
-      #venv.pip_install_and_link buildpath
+      system libexec/"bin/pip", "install", "-v", "--ignore-installed", buildpath
       bin.install_symlink libexec/"bin/codemodder" => "pixee-python-codemods"
     end
 end
