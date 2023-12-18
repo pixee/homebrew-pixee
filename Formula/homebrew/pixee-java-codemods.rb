@@ -15,8 +15,12 @@ class PixeeJavaCodemods < Formula
       system libexec/"bin/pip", "install", "-v", "--ignore-installed", "semgrep==1.51.0"
 
       prefix.install Dir["*"]
-      # Use write_env_script to generate a wrapper script
-      (bin/"pixee-java-codemods").write_env_script "#{prefix}/bin/core-codemods", Language::Java.overridable_java_home_env("17"), PATH: "#{libexec}/bin:$PATH"
       
+      # Use write_env_script to generate a wrapper script
+      java_home = "#{Formula["openjdk@17"].opt_prefix}/libexec/openjdk.jdk/Contents/Home"
+      (bin/"pixee-java-codemods").write_env_script "#{prefix}/bin/core-codemods",
+        PATH: "#{libexec}/bin:$PATH",
+        JAVA_HOME: java_home
+  
     end
   end
