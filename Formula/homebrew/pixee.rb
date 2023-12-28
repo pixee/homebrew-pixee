@@ -5,9 +5,9 @@ class Pixee < Formula
 
   desc "Fix and prevent bugs and security vulnerabilities in your code"
   homepage "https://pixee.ai"
- 
-  url "https://worker-brew.pixee.workers.dev/e7/0c/a327345bb27196f15204fa9bfb1737f5dced69b48e80a32ba38ee3adae37/pixee-0.5.4.tar.gz"
-  sha256 "b5eeeb0b88a50a8920f05321f420501b38a9acfdc1edcd4d2bf0618d3d1503db"
+
+  url "https://worker-brew.pixee.workers.dev/ad/6c/3c4ada32a280b207b65672324cb516b1a97f85952f7f9d69a62c1704e5ba/pixee-0.5.5.tar.gz"
+  sha256 "a922aa4a60189cd2c523d4581275f21a6adf7221acf72d833fe8896d4e4bd673"
 
   #url "https://github.com/pixee/pixee-cli.git", tag: cli_tag
   #head "https://github.com/pixee/pixee-cli.git", tag: cli_tag
