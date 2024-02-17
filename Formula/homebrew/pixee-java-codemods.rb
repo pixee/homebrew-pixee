@@ -1,8 +1,8 @@
 class PixeeJavaCodemods < Formula
     desc "Java codemods for Pixee"
     homepage "https://github.com/pixee/codemodder-java"
-    url "https://github.com/pixee/codemodder-java/releases/download/v0.70.2/codemodder-java-codemods-0.70.2.zip"
-    sha256 "ea5e54383b09d308f2341a2665cc9c691d027e8d1e3b4ed5255761e23cc681bf"
+    url "https://github.com/pixee/codemodder-java/releases/download/v0.70.3/codemodder-java-codemods-0.70.3.zip"
+    sha256 "cb9d956dbd2aa4c1c9c4c892a8d65c7cb352d2e39046d4defd4e184a0b078ed1"
 
     include Language::Python::Virtualenv
 
