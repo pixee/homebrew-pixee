@@ -2,10 +2,10 @@ class PixeePythonCodemods < Formula
     include Language::Python::Virtualenv
     desc "Python codemods for Pixee"
     homepage "https://github.com/pixee/codemodder-python"
-    url "https://files.pythonhosted.org/packages/2e/fa/cec62f55c7e27490f78aabb9b9819015411dd51f360b2f847415ce858394/codemodder-0.81.0.tar.gz"
-    sha256 "5b18e02709ed84d2a337a08abb5b246c68c6f56f9616648989b6a6267ccb5b7a"
+    url "https://files.pythonhosted.org/packages/81/51/7abca0081892c9c26ebc8a9ff0391a24fcc3f690b906c9a753e890f2cafa/codemodder-0.88.0.tar.gz"
+    sha256 "fcff7df3784dc1f598ec9ee8361cf16e1c482ece0735aa620c6a9588f1ddb05d"
 
-    version "0.81.0"
+    version "0.88.0"
 
     depends_on "python@3.11"
 
